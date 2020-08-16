@@ -1,0 +1,8 @@
+{
+    "name": "hn-server-template",
+    "version": "1.0.0",
+    "description": "Template for server applications of HN products.",
+    "main": "bin/www.js",
+    "author": "HN Software",
+    "license": "MIT"
+}
