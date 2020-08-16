@@ -3,6 +3,12 @@
     "version": "1.0.0",
     "description": "Template for server applications of HN products.",
     "main": "bin/www.js",
+    "scripts": {
+      "start": "nodemon bin/www.js"
+    },
     "author": "HN Software",
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "nodemon": "~2.0.4"
+    }
 }
