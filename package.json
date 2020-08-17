@@ -4,11 +4,12 @@
     "description": "Template for server applications of HN products.",
     "main": "bin/www.js",
     "scripts": {
-      "start": "nodemon bin/www.js"
+        "start": "nodemon bin/www.js"
     },
     "author": "HN Software",
     "license": "MIT",
     "devDependencies": {
+        "eslint": "~7.7.0",
         "nodemon": "~2.0.4"
     }
 }
