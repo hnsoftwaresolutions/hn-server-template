@@ -503,7 +503,7 @@
                 "next": "cjs-import"
             },
             {
-                "blankLine": "never",
+                "blankLine": "any",
                 "prev":  "cjs-import",
                 "next":  "cjs-import"
             }
