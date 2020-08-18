@@ -13,9 +13,7 @@
     ],
     "settings": {
         "node": {
-            "allowModules": [],
-            "resolvePaths": [],
-            "tryExtensions": []
+            "tryExtensions": [".js"]
         }
     },
     "rules": {
@@ -493,6 +491,21 @@
                     "let",
                     "var"
                 ]
+            },
+            {
+                "blankLine": "always",
+                "prev": "cjs-import",
+                "next": "*"
+            },
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": "cjs-import"
+            },
+            {
+                "blankLine": "never",
+                "prev":  "cjs-import",
+                "next":  "cjs-import"
             }
         ],
         "prefer-exponentiation-operator": "error",
