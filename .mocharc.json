@@ -1,0 +1,8 @@
+{
+    "check-leaks": true,
+    "exit": true,
+    "forbid-only": true,
+    "forbid-pending": true,
+    "reporter": "nyan",
+    "recursive": true
+}
