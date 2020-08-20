@@ -8,7 +8,8 @@
     "main": "bin/www.js",
     "scripts": {
         "start": "SET \"DEBUG=express:*\"&& nodemon bin/www.js",
-        "test": "mocha"
+        "test": "mocha",
+        "lint": "eslint ."
     },
     "author": "HN Software",
     "license": "MIT",
