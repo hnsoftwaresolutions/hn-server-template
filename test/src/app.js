@@ -11,7 +11,7 @@ describe(
         describe(
             'app',
             function () {
-                let src;
+                let app;
                 let expect;
                 let expressStub;
 
@@ -22,7 +22,7 @@ describe(
                     expressStub = sinon.stub()
                         .returns('expressStub');
 
-                    src = proxyquire(
+                    app = proxyquire(
                         '../../src/app.js',
                         {
                             express: expressStub
@@ -44,7 +44,7 @@ describe(
                 it(
                     'should export correct data',
                     function () {
-                        expect(src)
+                        expect(app)
                             .to
                             .equal('expressStub');
                     }
