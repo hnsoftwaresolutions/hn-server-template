@@ -18,7 +18,9 @@ describe(
                 before(function () {
                     expect = chai.expect;
                     chai.use(sinonChai);
+                });
 
+                beforeEach(function () {
                     expressStub = sinon.stub()
                         .returns('expressStub');
 
@@ -28,6 +30,11 @@ describe(
                             express: expressStub
                         }
                     );
+                });
+
+                afterEach(function () {
+                    sinon.restore();
+                    sinon.reset();
                 });
 
                 it(

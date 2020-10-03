@@ -41,8 +41,8 @@ describe(
                 });
 
                 afterEach(function () {
-                    sinon.resetHistory();
                     sinon.restore();
+                    sinon.reset();
                 });
 
                 it(

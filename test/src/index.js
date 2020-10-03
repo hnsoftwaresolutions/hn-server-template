@@ -18,7 +18,9 @@ describe(
                 before(function () {
                     expect = chai.expect;
                     chai.use(sinonChai);
+                });
 
+                beforeEach(function () {
                     appStub = sinon.stub()
                         .returns('appStub');
 
@@ -28,6 +30,11 @@ describe(
                             './app': appStub
                         }
                     );
+                });
+
+                afterEach(function () {
+                    sinon.reset();
+                    sinon.restore();
                 });
 
                 it(
