@@ -18,6 +18,15 @@
         ],
         "prefer-arrow-callback": "off",
         "no-unused-expressions": "off",
+        "max-lines-per-function": [
+            "error",
+            {
+                "max": 85,
+                "skipBlankLines": true,
+                "skipComments": true,
+                "IIFEs": true
+            }
+        ],
         // Inherited Rules End
         // Eslint Plugin Mocha Start
         "mocha/handle-done-callback": "error",
