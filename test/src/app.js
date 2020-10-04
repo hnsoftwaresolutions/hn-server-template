@@ -14,6 +14,7 @@ describe(
                 let app;
                 let expect;
                 let expressStub;
+                let expressUseSpy;
 
                 before(function () {
                     expect = chai.expect;
@@ -21,13 +22,20 @@ describe(
                 });
 
                 beforeEach(function () {
+                    expressUseSpy = sinon.stub();
                     expressStub = sinon.stub()
-                        .returns('expressStub');
+                        .returns({
+                            name: 'expressStub',
+                            use: expressUseSpy
+                        });
 
                     app = proxyquire(
                         '../../src/app.js',
                         {
-                            express: expressStub
+                            express: expressStub,
+                            './instances': {
+                                helmetInstance: 'helmetInstance'
+                            }
                         }
                     );
                 });
@@ -38,7 +46,7 @@ describe(
                 });
 
                 it(
-                    'should call once express with no parameters',
+                    'should call express once with no parameters',
                     function () {
                         expect(expressStub)
                             .to
@@ -49,9 +57,20 @@ describe(
                 );
 
                 it(
+                    'should call express.use with helmet instance',
+                    function () {
+                        expect(expressUseSpy)
+                            .to
+                            .have
+                            .been
+                            .calledOnceWithExactly('helmetInstance');
+                    }
+                );
+
+                it(
                     'should export correct data',
                     function () {
-                        expect(app)
+                        expect(app.name)
                             .to
                             .equal('expressStub');
                     }

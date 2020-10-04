@@ -10,7 +10,7 @@
         // Inherited Rules Start
         "max-nested-callbacks": [
             "error",
-            3
+            4
         ],
         "func-names": [
             "error",
