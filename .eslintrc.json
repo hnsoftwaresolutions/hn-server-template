@@ -13,7 +13,9 @@
     ],
     "settings": {
         "node": {
-            "tryExtensions": [".js"]
+            "tryExtensions": [
+                ".js"
+            ]
         }
     },
     "rules": {
@@ -342,7 +344,12 @@
             "error",
             3
         ],
-        "max-len": "error",
+        "max-len": [
+            "error",
+            {
+                "code": 100
+            }
+        ],
         "max-lines": [
             "error",
             {
@@ -408,11 +415,10 @@
         "no-tabs": "error",
         "no-ternary": "error",
         "no-trailing-spaces": "error",
-        "no-underscore-dangle":
-        [
+        "no-underscore-dangle": [
             "error",
             {
-                 "allowFunctionParams": false
+                "allowFunctionParams": false
             }
         ],
         "no-unneeded-ternary": [
@@ -481,12 +487,12 @@
             },
             {
                 "blankLine": "never",
-                "prev":  [
+                "prev": [
                     "const",
                     "let",
                     "var"
                 ],
-                "next":  [
+                "next": [
                     "const",
                     "let",
                     "var"
@@ -504,8 +510,8 @@
             },
             {
                 "blankLine": "any",
-                "prev":  "cjs-import",
-                "next":  "cjs-import"
+                "prev": "cjs-import",
+                "next": "cjs-import"
             }
         ],
         "prefer-exponentiation-operator": "error",
@@ -596,8 +602,8 @@
         // Possible Errors Section Start
         "node/no-callback-literal": "error",
         "node/no-exports-assign": "error",
-        "node/no-extraneous-import":  "error",
-        "node/no-extraneous-require":  "error",
+        "node/no-extraneous-import": "error",
+        "node/no-extraneous-require": "error",
         "node/no-missing-import": "error",
         "node/no-missing-require": "error",
         "node/no-unpublished-bin": "off",
