@@ -16,6 +16,7 @@ describe(
                     function () {
                         let expect;
                         let index;
+                        let expressRateLimitInstanceStub;
                         let helmetInstanceStub;
 
                         before(function () {
@@ -26,10 +27,13 @@ describe(
                         beforeEach(function () {
                             helmetInstanceStub = sinon.stub()
                                 .returns('helmetInstanceStub');
+                            expressRateLimitInstanceStub = sinon.stub()
+                                .returns('expressRateLimitInstanceStub');
 
                             index = proxyquire(
                                 '../../../src/instances/index.js',
                                 {
+                                    './express-rate-limit-instance': expressRateLimitInstanceStub,
                                     './helmet-instance': helmetInstanceStub
                                 }
                             );
@@ -41,9 +45,9 @@ describe(
                         });
 
                         it(
-                            'should export 1 file',
+                            'should export 2 file',
                             function () {
-                                const EXPORTED_FILES_COUNT = 1;
+                                const EXPORTED_FILES_COUNT = 2;
 
                                 expect(Object.keys(index).length)
                                     .to
@@ -55,6 +59,11 @@ describe(
                         it(
                             'should export correct file(s)',
                             function () {
+                                expect(index.expressRateLimitInstance())
+                                    .to
+                                    .be
+                                    .equal('expressRateLimitInstanceStub');
+
                                 expect(index.helmetInstance())
                                     .to
                                     .be

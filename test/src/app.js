@@ -34,7 +34,8 @@ describe(
                         {
                             express: expressStub,
                             './instances': {
-                                helmetInstance: 'helmetInstance'
+                                helmetInstance: 'helmetInstance',
+                                expressRateLimitInstance: 'expressRateLimitInstance'
                             }
                         }
                     );
@@ -63,7 +64,18 @@ describe(
                             .to
                             .have
                             .been
-                            .calledOnceWithExactly('helmetInstance');
+                            .calledWithExactly('helmetInstance');
+                    }
+                );
+
+                it(
+                    'should call express.use with express rate limit instance',
+                    function () {
+                        expect(expressUseSpy)
+                            .to
+                            .have
+                            .been
+                            .calledWithExactly('expressRateLimitInstance');
                     }
                 );
 

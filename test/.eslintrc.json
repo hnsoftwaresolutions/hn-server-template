@@ -27,6 +27,10 @@
                 "IIFEs": true
             }
         ],
+        "max-statements": [
+            "error",
+            15
+        ],
         // Inherited Rules End
         // Eslint Plugin Mocha Start
         "mocha/handle-done-callback": "error",
