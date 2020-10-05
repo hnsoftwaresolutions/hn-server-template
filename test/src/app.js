@@ -80,10 +80,23 @@ describe(
                 );
 
                 it(
+                    'should call express.use two times',
+                    function () {
+                        const CALL_COUNT = 2;
+
+                        expect(expressUseSpy.callCount)
+                            .to
+                            .be
+                            .equal(CALL_COUNT);
+                    }
+                );
+
+                it(
                     'should export correct data',
                     function () {
                         expect(app.name)
                             .to
+                            .be
                             .equal('expressStub');
                     }
                 );
