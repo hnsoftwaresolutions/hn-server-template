@@ -39,6 +39,7 @@ describe(
                             },
                             './controllers': {
                                 errorController: {
+                                    errorHandler: 'errorHandler',
                                     notFound: 'notFound'
                                 }
                             }
@@ -96,9 +97,20 @@ describe(
                 );
 
                 it(
-                    'should call express.use two times',
+                    'should call express.use with error handler error controller function',
                     function () {
-                        const CALL_COUNT = 3;
+                        expect(expressUseSpy)
+                            .to
+                            .have
+                            .been
+                            .calledWithExactly('errorHandler');
+                    }
+                );
+
+                it(
+                    'should call express.use four times',
+                    function () {
+                        const CALL_COUNT = 4;
 
                         expect(expressUseSpy.callCount)
                             .to

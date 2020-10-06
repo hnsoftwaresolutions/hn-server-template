@@ -370,7 +370,10 @@
             "error",
             2
         ],
-        "max-params": "error",
+        "max-params":  [
+            "error",
+            4
+        ],
         "max-statements": "error",
         "max-statements-per-line": "error",
         "multiline-comment-style": [

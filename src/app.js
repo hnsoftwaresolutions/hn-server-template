@@ -11,5 +11,6 @@ app.use(instances.helmetInstance);
 app.use(instances.expressRateLimitInstance);
 
 app.use(controllers.errorController.notFound);
+app.use(controllers.errorController.errorHandler);
 
 module.exports = app;

@@ -19,6 +19,7 @@ describe(
                             function () {
                                 let expect;
                                 let index;
+                                let errorHandlerStub;
                                 let notFoundStub;
 
                                 before(function () {
@@ -27,12 +28,15 @@ describe(
                                 });
 
                                 beforeEach(function () {
+                                    errorHandlerStub = sinon.stub()
+                                        .returns('errorHandlerStub');
                                     notFoundStub = sinon.stub()
                                         .returns('notFoundStub');
 
                                     index = proxyquire(
                                         '../../../../src/controllers/error',
                                         {
+                                            './error-handler': errorHandlerStub,
                                             './not-found': notFoundStub
                                         }
                                     );
@@ -44,14 +48,24 @@ describe(
                                 });
 
                                 it(
-                                    'should export 1 file',
+                                    'should export 2 files',
                                     function () {
-                                        const EXPORTED_FILES_COUNT = 1;
+                                        const EXPORTED_FILES_COUNT = 2;
 
                                         expect(Object.keys(index).length)
                                             .to
                                             .be
                                             .equal(EXPORTED_FILES_COUNT);
+                                    }
+                                );
+
+                                it(
+                                    'should export errorHandler',
+                                    function () {
+                                        expect(index.errorHandler())
+                                            .to
+                                            .be
+                                            .equal('errorHandlerStub');
                                     }
                                 );
 
