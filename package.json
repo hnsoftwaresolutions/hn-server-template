@@ -5,6 +5,7 @@
         "node": ">=12.18.3"
     },
     "description": "Template for server applications of HN products.",
+    "private": true,
     "main": "bin/www.js",
     "scripts": {
         "start": "SET \"DEBUG=express:*\"&& nodemon bin/www.js",
