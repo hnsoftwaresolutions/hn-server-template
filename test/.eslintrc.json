@@ -10,7 +10,7 @@
         // Inherited Rules Start
         "max-nested-callbacks": [
             "error",
-            4
+            5
         ],
         "func-names": [
             "error",
@@ -18,10 +18,16 @@
         ],
         "prefer-arrow-callback": "off",
         "no-unused-expressions": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 110
+            }
+        ],
         "max-lines-per-function": [
             "error",
             {
-                "max": 90,
+                "max": 105,
                 "skipBlankLines": true,
                 "skipComments": true,
                 "IIFEs": true

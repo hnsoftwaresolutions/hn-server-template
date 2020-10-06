@@ -36,6 +36,11 @@ describe(
                             './instances': {
                                 helmetInstance: 'helmetInstance',
                                 expressRateLimitInstance: 'expressRateLimitInstance'
+                            },
+                            './controllers': {
+                                errorController: {
+                                    notFound: 'notFound'
+                                }
                             }
                         }
                     );
@@ -80,9 +85,20 @@ describe(
                 );
 
                 it(
+                    'should call express.use with not found error controller function',
+                    function () {
+                        expect(expressUseSpy)
+                            .to
+                            .have
+                            .been
+                            .calledWithExactly('notFound');
+                    }
+                );
+
+                it(
                     'should call express.use two times',
                     function () {
-                        const CALL_COUNT = 2;
+                        const CALL_COUNT = 3;
 
                         expect(expressUseSpy.callCount)
                             .to
