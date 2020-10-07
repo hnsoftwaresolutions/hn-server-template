@@ -26,7 +26,7 @@ describe(
                             expressRateLimitSpy = sinon.spy();
 
                             proxyquire(
-                                '../../../src/instances/express-rate-limit-instance',
+                                '../../../../src/instances/express-rate-limit-instance',
                                 {
                                     'express-rate-limit': expressRateLimitSpy
                                 }
@@ -73,7 +73,7 @@ describe(
                                 sinon.resetHistory();
 
                                 proxyquire(
-                                    '../../../src/instances/express-rate-limit-instance',
+                                    '../../../../src/instances/express-rate-limit-instance',
                                     {
                                         'express-rate-limit': expressRateLimitSpy
                                     }

@@ -34,7 +34,7 @@ describe(
                                         .returns('notFoundStub');
 
                                     index = proxyquire(
-                                        '../../../../src/controllers/error',
+                                        '../../../../../src/controllers/error',
                                         {
                                             './error-handler': errorHandlerStub,
                                             './not-found': notFoundStub

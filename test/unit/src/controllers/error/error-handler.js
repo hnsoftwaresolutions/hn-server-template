@@ -32,7 +32,7 @@ describe(
                                     sendStatusSpy = sinon.spy();
 
                                     errorHandler = proxyquire(
-                                        '../../../../src/controllers/error/error-handler',
+                                        '../../../../../src/controllers/error/error-handler',
                                         {
                                             'http-status-codes': {
                                                 StatusCodes: {

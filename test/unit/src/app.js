@@ -30,7 +30,7 @@ describe(
                         });
 
                     app = proxyquire(
-                        '../../src/app.js',
+                        '../../../src/app.js',
                         {
                             express: expressStub,
                             './instances': {

@@ -30,7 +30,7 @@ describe(
                         });
 
                     proxyquire(
-                        '../../bin/www.js',
+                        '../../../bin/www.js',
                         {
                             http: {
                                 createServer: createServerStub
@@ -80,7 +80,7 @@ describe(
                         sinon.resetHistory();
 
                         proxyquire(
-                            '../../bin/www.js',
+                            '../../../bin/www.js',
                             {
                                 http: {
                                     createServer: createServerStub

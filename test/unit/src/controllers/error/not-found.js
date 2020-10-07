@@ -30,7 +30,7 @@ describe(
                                     sendStatusSpy = sinon.spy();
 
                                     notFound = proxyquire(
-                                        '../../../../src/controllers/error/not-found',
+                                        '../../../../../src/controllers/error/not-found',
                                         {
                                             'http-status-codes': {
                                                 StatusCodes: {

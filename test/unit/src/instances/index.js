@@ -31,7 +31,7 @@ describe(
                                 .returns('expressRateLimitInstanceStub');
 
                             index = proxyquire(
-                                '../../../src/instances/index.js',
+                                '../../../../src/instances/index.js',
                                 {
                                     './express-rate-limit-instance': expressRateLimitInstanceStub,
                                     './helmet-instance': helmetInstanceStub

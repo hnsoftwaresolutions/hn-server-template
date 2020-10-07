@@ -25,7 +25,7 @@ describe(
                         .returns('appStub');
 
                     index = proxyquire(
-                        '../../src/index.js',
+                        '../../../src/index.js',
                         {
                             './app': appStub
                         }

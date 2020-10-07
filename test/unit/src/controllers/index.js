@@ -9,14 +9,14 @@ describe(
     'src',
     function () {
         describe(
-            'instances',
+            'controllers',
             function () {
                 describe(
-                    'helmet-instance',
+                    'index',
                     function () {
                         let expect;
-                        let helmetInstance;
-                        let helmetStub;
+                        let index;
+                        let errorControllerStub;
 
                         before(function () {
                             expect = chai.expect;
@@ -24,39 +24,41 @@ describe(
                         });
 
                         beforeEach(function () {
-                            helmetStub = sinon.stub()
-                                .returns('helmetStub');
+                            errorControllerStub = sinon.stub()
+                                .returns('errorControllerStub');
 
-                            helmetInstance = proxyquire(
-                                '../../../src/instances/helmet-instance.js',
+                            index = proxyquire(
+                                '../../../../src/controllers',
                                 {
-                                    helmet: helmetStub
+                                    './error': errorControllerStub
                                 }
                             );
                         });
 
                         afterEach(function () {
-                            sinon.restore();
                             sinon.reset();
+                            sinon.restore();
                         });
 
                         it(
-                            'should call helmet once with no parameters',
+                            'should export 1 file',
                             function () {
-                                expect(helmetStub)
+                                const EXPORTED_FILES_COUNT = 1;
+
+                                expect(Object.keys(index).length)
                                     .to
-                                    .have
-                                    .been
-                                    .calledOnceWithExactly();
+                                    .be
+                                    .equal(EXPORTED_FILES_COUNT);
                             }
                         );
 
                         it(
-                            'should export correct data',
+                            'should export errorController',
                             function () {
-                                expect(helmetInstance)
+                                expect(index.errorController())
                                     .to
-                                    .equal('helmetStub');
+                                    .be
+                                    .equal('errorControllerStub');
                             }
                         );
                     }
